@@ -1,12 +1,12 @@
 @import "./styles/variables";
 @import "./styles/mixins";
 
-.container {
-  width: 700px;
-  border-radius: $card-border-radius-l;
+#root {
+  width: 100vw;
+  height: 100%;
   display: flex;
-  justify-content: space-between;
-  box-shadow: $box_shadow;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .btn {
@@ -16,78 +16,116 @@
   border: none;
 }
 
-.card {
-  @include vertical-list;
-  gap: 2rem;
-  padding: $card-padding-l $card-padding-sm;
-  text-align: center;
+.container {
   width: 50%;
-  color: #fff;
-}
-
-.result-card {
+  margin: 0 auto;
   border-radius: $card-border-radius-l;
-  background: linear-gradient($cobalt, $light_royal);
-}
-
-.result-card h4 {
-  font-size: 2rem;
-}
-
-.mark-circle {
-  color: #fff;
-  width: 13rem;
-  aspect-ratio: 1;
-  justify-content: center;
-  @include vertical-list;
-  border-radius: 50%;
-  background: linear-gradient($violet-blue_circle, $persian_blue_circle);
-}
-
-.final-mark {
-  font-size: 4rem;
-}
-
-.mark-desc {
-  color: $light_slate;
-  font-family: "HankenGrotesk-Medium";
-  font-size: 1.4rem;
-}
-
-.total {
-  color: $light_slate;
-}
-
-.summary-card {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 50%;
-  height: auto;
-  padding: $card-padding-l;
+  box-shadow: $box_shadow;
+
+  .result-card {
+    @include vertical-list;
+    gap: 2rem;
+    padding: $card-padding-l $card-padding-sm;
+    width: 50%;
+    color: #fff;
+    border-radius: $card-border-radius-l;
+    background: linear-gradient($cobalt, $light_royal);
+
+    h4 {
+      font-size: 2rem;
+    }
+
+    .mark-desc {
+      color: $light_slate;
+      font-family: "HankenGrotesk-Medium";
+      font-size: 1.4rem;
+    }
+
+    .mark-circle {
+      @include vertical-list;
+      color: #fff;
+      width: 13rem;
+      aspect-ratio: 1;
+      justify-content: center;
+      border-radius: 50%;
+      background: linear-gradient($violet-blue_circle, $persian_blue_circle);
+
+      .final-mark {
+        font-size: 4rem;
+      }
+
+      .total {
+        color: $light_slate;
+      }
+    }
+  }
+
+  .summary-card {
+    @include vertical-list;
+    align-items: start;
+    justify-content: space-between;
+    width: 50%;
+    padding: $card-padding-l;
+
+    .results-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      justify-content: space-between;
+
+      .result-unit {
+        @include horizontal-list;
+        justify-content: space-between;
+        gap: 0.5rem;
+        padding: 1rem;
+        border-radius: $card-border-radius-sm;
+
+        .unit-title {
+          @include vertical-list;
+          flex-direction: row;
+          justify-content: space-between;
+          gap: 0.5rem;
+        }
+        .total {
+          color: $light_slate;
+        }
+      }
+    }
+
+    .Continue-btn {
+      width: 100%;
+      background-color: $dark-blue-btn;
+      color: #fff;
+      cursor: pointer;
+    }
+    .Continue-btn:hover {
+      background-color: lighten($dark-blue-btn, 5);
+    }
+  }
 }
 
-.result-unit,
-.unit-title {
-  @include vertical-list;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 0.5rem;
-}
+@media only screen and (max-width: 425px) {
+  #root {
+    display: block;
+  }
 
-.result-unit {
-  padding: 1rem;
-  border-radius: $card-border-radius-sm;
-}
+  .container {
+    width: 100%;
+    .result-card {
+      width: 100%;
+      border-radius: 0 0 $card-border-radius-l $card-border-radius-l;
+    }
+    .summary-card {
+      width: 100%;
 
-.results-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  justify-content: space-between;
-}
-
-.Continue-btn {
-  background-color: $dark-blue-btn;
-  color: #fff;
+      h2 {
+        margin: 0.5rem 0;
+      }
+    }
+  }
+  .container {
+    flex-direction: column;
+  }
 }

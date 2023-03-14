@@ -6,7 +6,7 @@ const ResultContainer = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch("../../src/data.json");
+      const res = await fetch("./data.json");
       const data = await res.json();
       setResultUnit(data);
     };
