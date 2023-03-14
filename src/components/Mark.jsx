@@ -5,7 +5,7 @@ const Mark = ({ total }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch("../../data.json");
+      const res = await fetch("../../src/data.json");
       const data = await res.json();
       setScore(() => {
         let score = 0;
