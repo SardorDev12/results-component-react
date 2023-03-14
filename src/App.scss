@@ -1,0 +1,93 @@
+@import "./styles/variables";
+@import "./styles/mixins";
+
+.container {
+  width: 700px;
+  border-radius: $card-border-radius-l;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: $box_shadow;
+}
+
+.btn {
+  padding: 1rem;
+  border-radius: $card-border-radius-l;
+  font-size: 1.2rem;
+  border: none;
+}
+
+.card {
+  @include vertical-list;
+  gap: 2rem;
+  padding: $card-padding-l $card-padding-sm;
+  text-align: center;
+  width: 50%;
+  color: #fff;
+}
+
+.result-card {
+  border-radius: $card-border-radius-l;
+  background: linear-gradient($cobalt, $light_royal);
+}
+
+.result-card h4 {
+  font-size: 2rem;
+}
+
+.mark-circle {
+  color: #fff;
+  width: 13rem;
+  aspect-ratio: 1;
+  justify-content: center;
+  @include vertical-list;
+  border-radius: 50%;
+  background: linear-gradient($violet-blue_circle, $persian_blue_circle);
+}
+
+.final-mark {
+  font-size: 4rem;
+}
+
+.mark-desc {
+  color: $light_slate;
+  font-family: "HankenGrotesk-Medium";
+  font-size: 1.4rem;
+}
+
+.total {
+  color: $light_slate;
+}
+
+.summary-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  height: auto;
+  padding: $card-padding-l;
+}
+
+.result-unit,
+.unit-title {
+  @include vertical-list;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.result-unit {
+  padding: 1rem;
+  border-radius: $card-border-radius-sm;
+}
+
+.results-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.Continue-btn {
+  background-color: $dark-blue-btn;
+  color: #fff;
+}

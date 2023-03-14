@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "HankenGrotesk-Bold";
+  src: url("./assets/fonts/static/HankenGrotesk-Bold.ttf");
+  src: url("./assets/fonts/static/HankenGrotesk-Bold.ttf") format("ttf"),
+    url("./assets/fonts/static/HankenGrotesk-Bold.ttf") format("opentype"),
+    url("./assets/fonts/static/HankenGrotesk-Bold.ttf") format("svg");
+}
+@font-face {
+  font-family: "HankenGrotesk-ExtraBold";
+  src: url("./assets/fonts/static/HankenGrotesk-ExtraBold.ttf");
+  src: url("./assets/fonts/static/HankenGrotesk-ExtraBold.ttf") format("ttf"),
+    url("./assets/fonts/static/HankenGrotesk-ExtraBold.ttf") format("opentype"),
+    url("./assets/fonts/static/HankenGrotesk-ExtraBold.ttf") format("svg");
+}
+@font-face {
+  font-family: "HankenGrotesk-Medium";
+  src: url("./assets/fonts/static/HankenGrotesk-Medium.ttf");
+  src: url("./assets/fonts/static/HankenGrotesk-Medium.ttf") format("ttf"),
+    url("./assets/fonts/static/HankenGrotesk-Medium.ttf") format("opentype"),
+    url("./assets/fonts/static/HankenGrotesk-Medium.ttf") format("svg");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "HankenGrotesk-Bold";
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
